@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- fontawesome  -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/fontawesome.min.css" />
+    <script src="https://kit.fontawesome.com/22fb8f768d.js" crossorigin="anonymous"></script>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baahrakhari :: बाह्रखरी</title>
+  </head>
+  <body>
+    <!-- back to top -->
+    <button id="backToTop" onclick="backToTop()">
+      <i class="fa-solid fa-angle-up"></i>
+    </button>
+
+    <!-- Search -->
+    <div class="search-wrapper">
+      <div class="close-search text-end">
+        <button onclick="closeSearch()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="search-field d-flex align-items-center justify-content-center">
+        <div class="search-box d-flex justify-content-between">
+          <input type="search" name="search" id="search" placeholder="यहाँ टाईप गर्नुहोस्..." />
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- header -->
+    <header>
+      <div class="container">
+        <div class="row justify-content-end align-items-end py-4 justify-content-md-center">
+          <div class="col-xl-7 col-lg-7 col-md-8 col-sm-8">
+            <div class="logo text-center">
+              <a href="index.html"> <img src="./img/logo.png" alt="" /></a>
+              <p id="date"></p>
+            </div>
+          </div>
+          <div class="d-none d-xl-block col-lg-5">
+            <div class="categories text-end">
+              <a href="#"> निर्वाचन २०७९</a>
+              <a href="#"> निर्वाचन २०७९</a>
+              <a href="#"> निर्वाचन २०७९</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="d-none d-lg-block col-lg-10 col-xl-10">
+              <ul class="menu-items d-flex justify-content-between">
+                <li class="menu-item home">
+                  <a href="index.html">
+                    <i class="fa-solid fa-home"></i>
+                  </a>
+                </li>
+                <li class="menu-item"><a href="list.html">राजनीति</a></li>
+                <li class="menu-item"><a href="list.html">अर्थ व्यवसाय</a></li>
+                <li class="menu-item"><a href="list.html">खेल</a></li>
+                <li class="menu-item"><a href="list.html">विचार</a></li>
+                <li class="menu-item"><a href="list.html">देश</a></li>
+                <li class="menu-item"><a href="list.html">साहित्य</a></li>
+                <li class="menu-item"><a href="list.html">कला</a></li>
+                <li class="menu-item"><a href="list.html">सम्पादकीय</a></li>
+                <li class="menu-item"><a href="list.html">विदेश</a></li>
+                <li class="menu-item"><a href="list.html">कार्टुन</a></li>
+                <li class="menu-item sub-menu">
+                  <a href="#">अन्य</a>
+                  <ul class="dropdown-items">
+                    <li class="dropdown-item"><a href="list.html"> शिक्षा</a></li>
+                    <li class="dropdown-item"><a href="list.html">विचार / व्यक्तित्व</a></li>
+                    <li class="dropdown-item"><a href="list.html">अन्तर्वार्ता</a></li>
+                    <li class="dropdown-item"><a href="list.html">रोचक</a></li>
+                    <li class="dropdown-item"><a href="list.html">पत्रपत्रिका</a></li>
+                    <li class="dropdown-item"><a href="list.html">फोटो फिचर</a></li>
+                    <li class="dropdown-item"><a href="list.html">भिडियो ग्यालरी</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="col-xl-2 col-md-2 text-end">
+              <button id="search" onclick="showSearch()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <button id="mobile-menu" class="ms-4" onclick="showMenu()">
+                <i class="fa-solid fa-bars"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu-wrapper">
+      <div class="mobile-header d-flex justify-content-between align-items-center mb-4">
+        <button onclick="closeMenu()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="mobile-logo">
+          <a href="#">
+            <img src="./img/logo.png" alt="" />
+          </a>
+        </div>
+      </div>
+      <div id="mobile-menu-items"></div>
+    </div>
+
+    <!-- .list of news -->
+    <div class="history-wrapper">
+      <div class="container">
+        <div class="section-title">
+          <span class="md-heading section-heading">खेल</span>
+        </div>
+        <div class="list-wrapper">
+          <div class="row pt-5">
+            <div class="col-xl-12 col-md-12 col-sm-12">
+              <a href="detail.html">
+                <div class="sports-featured d-flex align-items-end justify-content-center">
+                  <h1 class="md-heading">अर्जेन्टिनाविरुद्ध फ्रान्स : फुटबलको ‘ड्रिम फाइनल’</h1>
+                </div>
+              </a>
+            </div>
+            <div class="col-xl-9 col-md-9 col-sm-12">
+              <div class="row">
+                <div class="col-xl-4 col-md-3 col-sm-12">
+                  <div class="side-news">
+                    <div class="news">
+                      <a href="detail.html">
+                        <img src="./img/featured/18.jpg" alt="" />
+                        <div class="details">
+                          <h1 class="sm-heading">सेमिफाइनलले फ्रान्सप्रतिको मेरो प्रेमलाई खोस्न सक्दैन : मोरक्कोका प्रशिक्षक रेग्रागुई</h1>
+                          <p class="date">बुधबार, मंसिर २८, २०७९</p>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="news">
+                      <a href="detail.html">
+                        <img src="./img/featured/18.jpg" alt="" />
+                        <div class="details">
+                          <h1 class="sm-heading">सेमिफाइनलले फ्रान्सप्रतिको मेरो प्रेमलाई खोस्न सक्दैन : मोरक्कोका प्रशिक्षक रेग्रागुई</h1>
+                          <p class="date">बुधबार, मंसिर २८, २०७९</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-8 col-md-4 col-sm-12">
+                  <a href="detail.html">
+                    <div class="hero-news text-center">
+                      <div class="details">
+                        <h1 class="md-heading">नेपालले ऐतिहासिक सिनेमा बनाउन सक्तैन ?</h1>
+                        <p class="date">बिहीबार, मंसिर २९, २०७९</p>
+                      </div>
+                      <img src="./img/featured/18.jpg" alt="" />
+                    </div>
+                  </a>
+                </div>
+                <div class="col-xl-12 col-md-12 col-sm-12">
+                  <a href="detail.html">
+                    <div class="list-news d-flex">
+                      <div class="featured-image">
+                        <img src="./img/featured/19.jpg" alt="" />
+                      </div>
+                      <div class="details">
+                        <h1 class="sm-heading">फाइनल नै विश्वकपको आफ्नो अन्तिम खेल हुने मेसीको घोषणा</h1>
+                        <p class="date">बुधबार, मंसिर २८, २०७९</p>
+                        <p class="description">
+                          अर्जेन्टिनाका कप्तान लियोनल मेसीले कतारमा जारी फिफा विश्वकपको फाइनल नै आफ्नो अन्तिम विश्वकप खेल हुने बताएका छन् ।
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="list-news d-flex">
+                      <div class="featured-image">
+                        <img src="./img/featured/19.jpg" alt="" />
+                      </div>
+                      <div class="details">
+                        <h1 class="sm-heading">फाइनल नै विश्वकपको आफ्नो अन्तिम खेल हुने मेसीको घोषणा</h1>
+                        <p class="date">बुधबार, मंसिर २८, २०७९</p>
+                        <p class="description">
+                          अर्जेन्टिनाका कप्तान लियोनल मेसीले कतारमा जारी फिफा विश्वकपको फाइनल नै आफ्नो अन्तिम विश्वकप खेल हुने बताएका छन् ।
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="list-news d-flex">
+                      <div class="featured-image">
+                        <img src="./img/featured/19.jpg" alt="" />
+                      </div>
+                      <div class="details">
+                        <h1 class="sm-heading">फाइनल नै विश्वकपको आफ्नो अन्तिम खेल हुने मेसीको घोषणा</h1>
+                        <p class="date">बुधबार, मंसिर २८, २०७९</p>
+                        <p class="description">
+                          अर्जेन्टिनाका कप्तान लियोनल मेसीले कतारमा जारी फिफा विश्वकपको फाइनल नै आफ्नो अन्तिम विश्वकप खेल हुने बताएका छन् ।
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="list-news d-flex">
+                      <div class="featured-image">
+                        <img src="./img/featured/19.jpg" alt="" />
+                      </div>
+                      <div class="details">
+                        <h1 class="sm-heading">फाइनल नै विश्वकपको आफ्नो अन्तिम खेल हुने मेसीको घोषणा</h1>
+                        <p class="date">बुधबार, मंसिर २८, २०७९</p>
+                        <p class="description">
+                          अर्जेन्टिनाका कप्तान लियोनल मेसीले कतारमा जारी फिफा विश्वकपको फाइनल नै आफ्नो अन्तिम विश्वकप खेल हुने बताएका छन् ।
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="list-news d-flex">
+                      <div class="featured-image">
+                        <img src="./img/featured/19.jpg" alt="" />
+                      </div>
+                      <div class="details">
+                        <h1 class="sm-heading">फाइनल नै विश्वकपको आफ्नो अन्तिम खेल हुने मेसीको घोषणा</h1>
+                        <p class="date">बुधबार, मंसिर २८, २०७९</p>
+                        <p class="description">
+                          अर्जेन्टिनाका कप्तान लियोनल मेसीले कतारमा जारी फिफा विश्वकपको फाइनल नै आफ्नो अन्तिम विश्वकप खेल हुने बताएका छन् ।
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="list-news d-flex">
+                      <div class="featured-image">
+                        <img src="./img/featured/19.jpg" alt="" />
+                      </div>
+                      <div class="details">
+                        <h1 class="sm-heading">फाइनल नै विश्वकपको आफ्नो अन्तिम खेल हुने मेसीको घोषणा</h1>
+                        <p class="date">बुधबार, मंसिर २८, २०७९</p>
+                        <p class="description">
+                          अर्जेन्टिनाका कप्तान लियोनल मेसीले कतारमा जारी फिफा विश्वकपको फाइनल नै आफ्नो अन्तिम विश्वकप खेल हुने बताएका छन् ।
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="list-news d-flex">
+                      <div class="featured-image">
+                        <img src="./img/featured/19.jpg" alt="" />
+                      </div>
+                      <div class="details">
+                        <h1 class="sm-heading">फाइनल नै विश्वकपको आफ्नो अन्तिम खेल हुने मेसीको घोषणा</h1>
+                        <p class="date">बुधबार, मंसिर २८, २०७९</p>
+                        <p class="description">
+                          अर्जेन्टिनाका कप्तान लियोनल मेसीले कतारमा जारी फिफा विश्वकपको फाइनल नै आफ्नो अन्तिम विश्वकप खेल हुने बताएका छन् ।
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <nav aria-label="Page navigation">
+                  <ul class="pagination justify-content-center my-5">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link current" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-3 col-sm-12">
+              <div class="side-news">
+                <div class="news">
+                  <a href="detail.html">
+                    <img src="./img/featured/18.jpg" alt="" />
+                    <div class="details">
+                      <h1 class="sm-heading">सेमिफाइनलले फ्रान्सप्रतिको मेरो प्रेमलाई खोस्न सक्दैन : मोरक्कोका प्रशिक्षक रेग्रागुई</h1>
+                      <p class="date">बुधबार, मंसिर २८, २०७९</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="news">
+                  <a href="detail.html">
+                    <img src="./img/featured/18.jpg" alt="" />
+                    <div class="details">
+                      <h1 class="sm-heading">सेमिफाइनलले फ्रान्सप्रतिको मेरो प्रेमलाई खोस्न सक्दैन : मोरक्कोका प्रशिक्षक रेग्रागुई</h1>
+                      <p class="date">बुधबार, मंसिर २८, २०७९</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="ad-wrapper mt-3">
+                <div class="ads mb-3">
+                  <a href="detail.html">
+                    <img src="./img/ads/3.gif" alt="" />
+                  </a>
+                </div>
+                <div class="ads mb-3">
+                  <a href="detail.html">
+                    <img src="./img/ads/3.gif" alt="" />
+                  </a>
+                </div>
+                <div class="ads mb-3">
+                  <a href="detail.html">
+                    <img src="./img/ads/3.gif" alt="" />
+                  </a>
+                </div>
+              </div>
+
+              <div class="requested-wrapper">
+                <div class="section-title pb-4">
+                  <span class="md-heading section-heading">सिफारिस</span>
+                </div>
+                <div class="news">
+                  <a href="detail.html">
+                    <img src="./img/featured/3.jpg" alt="" />
+                    <div class="details">
+                      <h1 class="sm-heading">नेपालले ऐतिहासिक सिनेमा बनाउन सक्तैन ?</h1>
+                      <p class="date">बिहीबार, मंसिर २९, २०७९</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="past-news">
+                  <div class="news">
+                    <a href="detail.html">
+                      <div class="details">
+                        <h1 class="sm-heading">नेपालले ऐतिहासिक सिनेमा बनाउन सक्तैन ?</h1>
+                        <p class="date">बिहीबार, मंसिर २९, २०७९</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="news">
+                    <a href="detail.html">
+                      <div class="details">
+                        <h1 class="sm-heading">नेपालले ऐतिहासिक सिनेमा बनाउन सक्तैन ?</h1>
+                        <p class="date">बिहीबार, मंसिर २९, २०७९</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="news">
+                    <a href="detail.html">
+                      <div class="details">
+                        <h1 class="sm-heading">नेपालले ऐतिहासिक सिनेमा बनाउन सक्तैन ?</h1>
+                        <p class="date">बिहीबार, मंसिर २९, २०७९</p>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="editor-side">
+                <div class="section-title pb-4">
+                  <span class="md-heading section-heading">सम्पादकीय</span>
+                </div>
+                <div class="news">
+                  <a href="detail.html">
+                    <img src="./img/featured/3.jpg" alt="" />
+                    <div class="details">
+                      <h1 class="sm-heading">नेपालले ऐतिहासिक सिनेमा बनाउन सक्तैन ?</h1>
+                      <p class="date">बिहीबार, मंसिर २९, २०७९</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="ad-wrapper mt-3">
+                <div class="ads mb-3">
+                  <a href="detail.html">
+                    <img src="./img/ads/3.gif" alt="" />
+                  </a>
+                </div>
+                <div class="ads mb-3">
+                  <a href="detail.html">
+                    <img src="./img/ads/3.gif" alt="" />
+                  </a>
+                </div>
+              </div>
+              <div class="blog-list-wrapper">
+                <div class="section-title">
+                  <span class="md-heading section-heading">ब्लग</span>
+                </div>
+                <div class="blog-wrapper pt-3">
+                  <a href="detail.html">
+                    <div class="blog d-flex justify-content-start">
+                      <img src="./img/featured/8.jpg" alt="" />
+                      <div class="details">
+                        <h5>बहिनी जेरीलाई पत्र</h5>
+                        <p class="date">बाह्रखरी</p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="blog d-flex justify-content-start">
+                      <img src="./img/featured/8.jpg" alt="" />
+                      <div class="details">
+                        <h5>बहिनी जेरीलाई पत्र</h5>
+                        <p class="date">बाह्रखरी</p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="blog d-flex justify-content-start">
+                      <img src="./img/featured/8.jpg" alt="" />
+                      <div class="details">
+                        <h5>बहिनी जेरीलाई पत्र</h5>
+                        <p class="date">बाह्रखरी</p>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="blog d-flex justify-content-start">
+                      <img src="./img/featured/8.jpg" alt="" />
+                      <div class="details">
+                        <h5>बहिनी जेरीलाई पत्र</h5>
+                        <p class="date">बाह्रखरी</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="list-popular-wrapper mt-3">
+                <div class="section-title">
+                  <span class="md-heading section-heading">लोकप्रिय</span>
+                </div>
+                <div class="popular-wrapper pt-3">
+                  <a href="detail.html">
+                    <div class="news d-flex justify-content-start align-items-center">
+                      <span>१</span>
+                      <h1 class="sm-heading">रवि लामिछाने नेतृत्त्वको पार्टी सरकारमा जान तयार, एजेन्डामा छलफल हुने</h1>
+                      <img src="./img/featured/11.jpg" alt="" />
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="news d-flex justify-content-start align-items-center">
+                      <span>२</span>
+                      <h1 class="sm-heading">रवि लामिछाने नेतृत्त्वको पार्टी सरकारमा जान तयार, एजेन्डामा छलफल हुने</h1>
+                      <img src="./img/featured/11.jpg" alt="" />
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="news d-flex justify-content-start align-items-center">
+                      <span>३</span>
+                      <h1 class="sm-heading">रवि लामिछाने नेतृत्त्वको पार्टी सरकारमा जान तयार, एजेन्डामा छलफल हुने</h1>
+                      <img src="./img/featured/11.jpg" alt="" />
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="news d-flex justify-content-start align-items-center">
+                      <span>४</span>
+                      <h1 class="sm-heading">रवि लामिछाने नेतृत्त्वको पार्टी सरकारमा जान तयार, एजेन्डामा छलफल हुने</h1>
+                      <img src="./img/featured/11.jpg" alt="" />
+                    </div>
+                  </a>
+                  <a href="detail.html">
+                    <div class="news d-flex justify-content-start align-items-center">
+                      <span>५</span>
+                      <h1 class="sm-heading">रवि लामिछाने नेतृत्त्वको पार्टी सरकारमा जान तयार, एजेन्डामा छलफल हुने</h1>
+                      <img src="./img/featured/11.jpg" alt="" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-2 col-md-2 col-xm-12">
+              <div class="contact mb-4">
+                <h1 class="sm-heading pb-3">सम्पर्क ठेगाना</h1>
+                <p>कामनपा, वडा नं ११,<br />घर नम्बर १३८</p>
+
+                <p>थापाथली, काठमाडौं, नेपाल</p>
+              </div>
+              <div class="about mb-4">
+                <a href="#">
+                  <span>हाम्रो बारेमा</span>
+                </a>
+                <a href="#"><span>हाम्रो टिम</span></a>
+              </div>
+              <div class="connect">
+                <p>हामीसंग जोडिनुहोस्</p>
+                <div class="socials d-flex mt-3">
+                  <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa-brands fa-twitter"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                  <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-2 col-xm-12">
+              <div class="contact mb-4">
+                <h1 class="sm-heading pb-3">फोन / इमेल</h1>
+                <p>०१-५९११६५१ /०१-५९११६५६</p>
+                <p>baahrakhari@gmail.com</p>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-2 col-xm-12">
+              <div class="ad-contact mb-4">
+                <h1 class="sm-heading pb-3">विज्ञापनको लागि</h1>
+                <p>९८o-१८४९६o८</p>
+                <p>baahrakhari.marketing@gmail.com</p>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-2 col-xm-12">
+              <div class="ad-contact mb-4">
+                <h1 class="sm-heading pb-3">प्रधान सम्पादक</h1>
+                <p>प्रतीक प्रधान</p>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-2 col-xm-12">
+              <div class="ad-contact mb-4">
+                <h1 class="sm-heading pb-3">प्रबन्ध निर्देशक</h1>
+                <p>ज्ञानेश्वर आचार्य</p>
+              </div>
+            </div>
+            <div class="col-xl-2 col-md-2 col-xm-12">
+              <div class="footer-menu">
+                <h1 class="sm-heading">बाह्रखरी</h1>
+                <div class="row">
+                  <div class="col-xl-6 col-md-6 col-sm-12">
+                    <ul>
+                      <li><a href="index.html"> गृहपृष्ठ</a></li>
+                      <li><a href="#">राजनीति</a></li>
+                      <li><a href="#"> अर्थ व्यवसाय</a></li>
+                      <li><a href="#"> खेल</a></li>
+                      <li><a href="#">विचार</a></li>
+                      <li><a href="#">साहित्य</a></li>
+                      <li><a href="#">कला</a></li>
+                      <li><a href="#">सम्पादकीय</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-xl-6 col-md-6 col-sm-12">
+                    <ul>
+                      <li><a href="index.html"> विदेश</a></li>
+                      <li><a href="#">कार्टुन</a></li>
+                      <li><a href="#"> अविच्युरी</a></li>
+                      <li><a href="#"> बाह्रखरी</a></li>
+                      <li><a href="#">कथा</a></li>
+                      <li><a href="#">बाह्रखरी</a></li>
+                      <li><a href="#">गल्फ</a></li>
+                      <li><a href="#">युनिकोड</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copyright-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12 col-md-12 col-sm-12 text-center mt-3">
+              <p>&copy; 2022 Baahrakhari-Digital Newspaper. All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- js -->
+    <script src="./js/app.js"></script>
+  </body>
+</html>
